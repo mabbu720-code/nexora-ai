@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexora AI</title>
+<meta name="theme-color" content="#0D1324">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Nexora AI">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+<canvas id="bg"></canvas><div id="glow"></div>
+<div id="home"><div class="hw">
+<div class="stage"><div class="orbit" id="orbit"></div><div class="orb"></div></div>
+<h2 class="ht">Nexora AI</h2>
+<p class="tag"><span id="tw"></span><i class="cur"></i></p>
+<p class="lead">Chat, learn, translate, write, code and analyze, all in one place.</p>
+<button class="go" id="go">Start chatting</button>
+<button class="ib inst" id="inst" hidden>Install app on this phone</button>
+<p class="lead" id="ios" hidden>iPhone: tap Share, then "Add to Home Screen" to install.</p>
+<div class="cards" id="cards"></div>
+<p class="by">Created by Abbu &amp; Ibad</p>
+</div></div>
+<header>
+  <div class="logo">N</div>
+  <div><h1>Nexora AI</h1><div class="sub">Created by Abbu &amp; Ibad</div></div>
+  <div class="sp"></div>
+  <button class="ib" id="hm" title="Home">Home</button>
+  <button class="ib" id="clr" title="Clear this chat">Clear</button>
+  <button class="ib" id="thm" title="Switch theme">Theme</button>
+  <button class="ib" id="st" title="AI settings">Settings</button>
+</header>
+<div class="bar" id="bar"></div>
+<div class="main">
+  <nav id="nav"></nav>
+  <section>
+    <div class="opt" id="opt">Translate to: <select id="lang"><option>English</option><option>Hindi</option><option>Urdu</option><option>Hinglish</option><option>Spanish</option><option>French</option><option>German</option><option>Arabic</option><option>Japanese</option></select></div>
+    <div id="chat" aria-live="polite"></div>
+    <form id="f"><textarea id="t" rows="1" placeholder="Type your message..."></textarea><button class="send" id="s">Send</button></form>
+    <footer>Nexora AI by Abbu &amp; Ibad. AI can make mistakes, so double-check important answers.</footer>
+  </section>
+</div>
+<div id="set" class="modal" hidden><div class="sheet">
+<h3>AI Settings</h3><p class="note" id="snote"></p>
+<label>Gemini API key (free)<input id="key" type="password" placeholder="AIza..." autocomplete="off"></label>
+<label>Model<input id="mdl"></label>
+<label>Server URL (optional)<input id="srv" placeholder="https://your-app.vercel.app/api/chat"></label>
+<div class="row"><button class="ib" id="sx">Cancel</button><button class="send" id="ss">Save</button></div>
+</div></div>
+<script src="script.js"></script>
+</body>
+</html>
