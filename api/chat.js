@@ -3,7 +3,7 @@ if(req.method!=="POST")return res.status(405).json({error:"POST only"});
 if(!process.env.GEMINI_API_KEY)return res.status(500).json({error:"Server API key is not configured"});
 const{system,messages}=req.body||{};
 if(!Array.isArray(messages)||!messages.length)return res.status(400).json({error:"No messages provided"});
-const model=process.env.GEMINI_MODEL||"gemini-2.5-flash-lite";
+const model="gemini-3.5-flash-lite";
 try{
 const r=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+model+":generateContent",{method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":process.env.GEMINI_API_KEY},body:JSON.stringify({systemInstruction:{parts:[{text:String(system||"").slice(0,4000)}]},contents:messages.slice(-12).map(m=>({role:m.role==="assistant"?"model":"user",parts:[{text:String(m.content||"").slice(0,6000)}]})),generationConfig:{maxOutputTokens:1024,temperature:.7}})});
 const d=await r.json().catch(()=>({}));
